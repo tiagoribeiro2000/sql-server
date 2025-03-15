@@ -34,6 +34,20 @@ CONSTRAINT fk_id_editora FOREIGN KEY(IdEditora)
 REFERENCES Editora(IdEditora) ON DELETE CASCADE,
 CONSTRAINT fk_id_assunto FOREIGN KEY(IdAssunto)
 REFERENCES Assunto(IdAssunto) ON DELETE CASCADE,
-
 CONSTRAINT verifica_preco CHECK(PreçoLivro >=0)
 );
+
+CREATE TABLE LivroAutor(
+IdLivro SMALLINT NOT NULL,
+IdAutor SMALLINT NOT NULL,
+CONSTRAINT fk_id_livros FOREIGN KEY(IdLivro) REFERENCES Livro(IdLivro),
+CONSTRAINT fk_id_autores FOREIGN KEY(IdAutor) REFERENCES Autor(IdAutor),
+CONSTRAINT pk_id_livro_autor PRIMARY KEY(IdLivro, IdAutor)
+);
+
+
+
+SELECT name FROM Biblioteca.sys.tables;
+
+
+
