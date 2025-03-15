@@ -9,7 +9,15 @@ SobreNomeAutor VARCHAR(60) NOT NULL,
 CONSTRAINT pk_id_autor PRIMARY KEY(IdAutor)
 );
 
+sp_help Autor;
+
 CREATE TABLE Editora (
-IdEditora SMALLINT PRIMARY KEY IDENTITTY,
+IdEditora SMALLINT PRIMARY KEY IDENTITY,
 NomeEditora VARCHAR(50) NOT NULL
 );
+
+CREATE TABLE Assunto(
+IdAssunto TINYINT PRIMARY KEY ,
+NomeAssunto VARCHAR(25) NOT NULL
+);
+
